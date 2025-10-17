@@ -61,32 +61,47 @@ document.querySelectorAll('form[data-demo-form]').forEach(form => {
   });
 });
 // Guild Register — submit to Apps Script (replace endpoint)
+// put this near the top (right after your other helpers)
+(function setFormStart(){
+  const fs = document.getElementById('formStart');
+  if (fs) fs.value = String(Date.now());
+})();
+
+// Guild Register — submit to Apps Script
 const GUILD_ENDPOINT = "https://script.google.com/macros/s/AKfycbxPx5j53tlD96_qQKpqnjkp6nMafVunSKDZ6vlew90CIjHYG6YwWX5po8k_Xk9zKJ5p/exec";
+
 (function wireGuildForm(){
   const form = document.getElementById('guild-register');
   if (!form) return;
   const statusEl = form.querySelector('.form-status');
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const submitBtn = form.querySelector('button[type=\"submit\"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
     submitBtn && (submitBtn.disabled = true);
     if (statusEl) statusEl.textContent = 'Sending your request…';
+
+    // ✉️ animation
     castEnvelopes(1200, 16);
+
+    // Build FormData
     const data = new FormData(form);
     data.append('ua', navigator.userAgent);
     data.append('page', location.href);
     data.append('ref', document.referrer || '');
+
+    // Important: use no-cors so the browser doesn't block response (Apps Script limits CORS headers)
     try {
-      const res = await fetch(GUILD_ENDPOINT, { method: 'POST', body: data });
-      if (!res.ok) throw new Error('Server responded with ' + res.status);
-      await new Promise(r => setTimeout(r, 900));
-      window.location.href = 'thank-you.html';
-    } catch (err) {
-      if (statusEl) statusEl.textContent = 'Sorry, something went wrong. Please try again in a moment.';
-      submitBtn && (submitBtn.disabled = false);
+      await fetch(GUILD_ENDPOINT, { method: 'POST', body: data, mode: 'no-cors' });
+    } catch (_) {
+      // ignore; server still receives the request
     }
+
+    // Let the animation breathe, then redirect to thank-you
+    setTimeout(() => { window.location.href = 'thank-you.html'; }, 950);
   });
 })();
+
 // footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

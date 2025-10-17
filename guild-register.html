@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script defer src="main.js"></script>
 </head>
 <body data-page="guild">
@@ -34,6 +35,7 @@
       <div class="container narrow">
         <h1>Guild Register (For Leaders)</h1>
         <p class="muted">Submit your request below. We’ll review and contact you for verification.</p>
+        
         <form id="guild-register">
           <div class="grid grid-2">
             <label>Guild name
@@ -43,19 +45,37 @@
               <input type="text" name="leaderName" placeholder="(e.g., Zachary Drake)" required />
             </label>
           </div>
+          
+          <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+
           <label>Contact email
             <input type="email" name="email" placeholder="(e.g., example@example.com)" required aria-describedby="emailNote" />
-            <small id="emailNote" class="field-note">This contact email is <strong>not</strong> connected to your Wizard101 account. For your privacy, we recommend using a different email than the one used for your Wizard101 account. We’ll use this address only to reach you about your guild creation request.</small>
+            <small id="emailNote" class="field-note">
+              This contact email is <strong>not</strong> connected to your Wizard101 account. For privacy, please use a different email than your Wizard101 login. We’ll use this address only to reach you about your guild creation request.
+            </small>
           </label>
+
           <label>Discord Username <span class="muted small">(optional)</span>
-            <input type="text" name="discord" placeholder="(e.g., johndoe65)" />
+           <input type="text" name="discord" placeholder="(e.g., johndoe65)" />
           </label>
+
           <label>Request details <span class="muted small">(optional)</span>
-            <textarea name="requestDetails" rows="5" placeholder="(e.g., 2‑year‑old guild with 45 members, ~18 active weekly. We expect ~25 members to join and use this platform...)"></textarea>
+            <textarea name="requestDetails" rows="5" placeholder="(e.g., 2-year-old guild with 45 members; ~18 active weekly. We expect ~25 members to join and use this platform...)"></textarea>
           </label>
+
+          <!-- Honeypot (should stay empty) -->
+          <input type="text" name="website" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" />
+
+          <!-- Minimum-fill-time marker -->
+          <input type="hidden" name="formStart" id="formStart" />
+
+          <!-- Cloudflare Turnstile CAPTCHA -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAB7OhqtbDUjSSeke"></div>
+
           <button class="button" type="submit">Submit registration</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
+        
       </div>
     </section>
       <div class="container hero-inner">

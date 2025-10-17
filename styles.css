@@ -2,6 +2,16 @@
   --bg:#0b0a19; --bg-alt:#101129; --text:#eef1f7; --muted:#b9c2da;
   --primary:#f1c40f; --accent:#7c4dff; --card:#151832; --border:#242a52; --maxw:1100px;
 }
+/* Honeypot field: hidden from humans, visible to bots */
+.hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 *{box-sizing:border-box} html,body{margin:0;padding:0}
 body{
   font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text);
