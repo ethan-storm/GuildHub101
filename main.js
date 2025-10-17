@@ -61,7 +61,7 @@ document.querySelectorAll('form[data-demo-form]').forEach(form => {
   });
 });
 // Guild Register — submit to Apps Script (replace endpoint)
-const GUILD_ENDPOINT = "YOUR_APPS_SCRIPT_WEB_APP_URL";
+const GUILD_ENDPOINT = "https://script.google.com/macros/s/AKfycbxPx5j53tlD96_qQKpqnjkp6nMafVunSKDZ6vlew90CIjHYG6YwWX5po8k_Xk9zKJ5p/exec";
 (function wireGuildForm(){
   const form = document.getElementById('guild-register');
   if (!form) return;
