@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GuildHub101 — Guild Register</title>
+  <meta name="description" content="Register your guild and verify leadership." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body data-page="guild">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="GuildHub101 home">
+        <span class="logo-mark">◇</span><span class="logo-text">GuildHub101</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav" data-nav>
+        <a href="signin.html">User Sign in / Sign up</a>
+        <a href="guild-register.html">Guild Register (For leaders)</a>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact us</a>
+        <a href="about.html">About us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow">
+        <h1>Guild Register (For Leaders)</h1>
+        <p class="muted">Fill this form to register your guild. We’ll contact you for verification.</p>
+
+        <form id="guild-register" data-demo-form>
+          <div class="grid grid-2">
+            <label>
+              Guild name
+              <input type="text" name="guildName" required />
+            </label>
+            <label>
+              Leader name
+              <input type="text" name="leaderName" required />
+            </label>
+          </div>
+
+          <div class="grid grid-2">
+            <label>
+              Contact email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Discord tag
+              <input type="text" name="discord" placeholder="e.g., Ehsan#1234" />
+            </label>
+          </div>
+
+          <div class="grid grid-2">
+            <label>
+              Server / Realm
+              <input type="text" name="server" />
+            </label>
+            <label>
+              Region
+              <input type="text" name="region" />
+            </label>
+          </div>
+
+          <label>
+            Guild description
+            <textarea name="description" rows="5"></textarea>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" name="isLeader" required />
+            I confirm I am the guild leader or an authorized officer.
+          </label>
+
+          <button class="button" type="submit">Submit registration</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="muted small mt">Later we’ll wire this to a backend (Formspree or Firebase) to store requests.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> GuildHub101 • A community site. Not affiliated with any game. </small>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GuildHub101 — Sign in / Sign up</title>
+  <meta name="description" content="User sign in and sign up for GuildHub101." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body data-page="signin">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="GuildHub101 home">
+        <span class="logo-mark">◇</span><span class="logo-text">GuildHub101</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav" data-nav>
+        <a href="signin.html">User Sign in / Sign up</a>
+        <a href="guild-register.html">Guild Register (For leaders)</a>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact us</a>
+        <a href="about.html">About us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow">
+        <h1>User Sign in / Sign up</h1>
+        <p class="muted">This is a placeholder. We’ll add real authentication next.</p>
+
+        <div class="tabs" data-tabs>
+          <button class="tab active" data-tab-target="#signin">Sign in</button>
+          <button class="tab" data-tab-target="#signup">Sign up</button>
+        </div>
+
+        <div class="tab-panels">
+          <form id="signin" class="panel active" data-demo-form>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <button class="button" type="submit">Sign in</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <form id="signup" class="panel" data-demo-form>
+            <label>
+              Display name
+              <input type="text" name="displayName" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" minlength="6" required />
+            </label>
+            <button class="button" type="submit">Create account</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <p class="muted small mt">Note: We’ll wire these to real auth (e.g., Firebase) later.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> GuildHub101 • A community site. Not affiliated with any game. </small>
+    </div>
+  </footer>
+</body>
+</html>
