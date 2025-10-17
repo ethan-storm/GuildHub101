@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My First Website</title>
+  <meta name="description" content="A simple, fast website starter." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">MySite</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav" data-nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>👋 Welcome! You just built a website.</h1>
+        <p>
+          This starter is clean, fast, and fully yours. Edit the text, add images, and publish online in minutes.
+        </p>
+        <div class="cta">
+          <a class="button" href="#features">See Features</a>
+          <a class="button button-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>No build tools required</h3>
+            <p>Just open <code>index.html</code> to view the site. Add content and you're done.</p>
+          </article>
+          <article class="card">
+            <h3>Responsive by default</h3>
+            <p>Looks great on phones, tablets, and desktops. Try resizing your browser.</p>
+          </article>
+          <article class="card">
+            <h3>Easy to extend</h3>
+            <p>Add pages, sections, images, and forms. Upgrade to a CMS later if you want.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container narrow">
+        <h2>About</h2>
+        <p>
+          Replace this with your own story. Tell visitors who you are, what you do, and how you help.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <h2>Contact</h2>
+        <form id="contact-form">
+          <label>
+            Your name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Your email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="button" type="submit">Send</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> MySite. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
