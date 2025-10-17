@@ -4,15 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GuildHub101 — Contact us</title>
-  <meta name="description" content="Contact the GuildHub101 team." />
+  <meta name="description" content="GuildHub101 — Magic-inspired community portal for guilds." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script defer src="main.js"></script>
 </head>
 <body data-page="contact">
+  <div id="spellcast" aria-hidden="true"></div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="GuildHub101 home">
@@ -28,38 +29,39 @@
       </nav>
     </div>
   </header>
-
   <main>
     <section class="section">
       <div class="container narrow">
         <h1>Contact us</h1>
         <p class="muted">Got questions or ideas? Send us a message.</p>
-
         <form id="contact-form" data-demo-form>
-          <label>
-            Your name
+          <label>Your name
             <input type="text" name="name" required />
           </label>
-          <label>
-            Your email
+          <label>Your email
             <input type="email" name="email" required />
           </label>
-          <label>
-            Message
+          <label>Message
             <textarea name="message" rows="5" required></textarea>
           </label>
           <button class="button" type="submit">Send</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-
-        <p class="muted small mt">We’ll connect this form to real email next.</p>
+      </div>
+    </section>
+      <div class="container hero-inner">
+        <h1 class="display">✨ Welcome to <span class="glow">GuildHub101</span></h1>
+        <p class="lead">A modern, magic-inspired portal for guilds. Register your guild, invite members, and stay connected.</p>
+        <div class="cta">
+          <a class="button" href="guild-register.html">Register your Guild</a>
+          <a class="button button-secondary" href="signin.html">User Sign in / Sign up</a>
+        </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> GuildHub101 • A community site. Not affiliated with any game. </small>
+      <small>© <span id="year"></span> GuildHub101 • A community site. Not affiliated with any game.</small>
     </div>
   </footer>
 </body>

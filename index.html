@@ -8,11 +8,12 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script defer src="main.js"></script>
 </head>
 <body data-page="home">
+  <div id="spellcast" aria-hidden="true"></div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="GuildHub101 home">
@@ -28,45 +29,21 @@
       </nav>
     </div>
   </header>
-
   <main>
     <section class="hero">
       <div class="container hero-inner">
         <h1 class="display">✨ Welcome to <span class="glow">GuildHub101</span></h1>
-        <p class="lead">
-          A modern, magic-inspired portal for guilds. Register your guild, invite members, and stay connected.
-        </p>
+        <p class="lead">A modern, magic-inspired portal for guilds. Register your guild, invite members, and stay connected.</p>
         <div class="cta">
           <a class="button" href="guild-register.html">Register your Guild</a>
           <a class="button button-secondary" href="signin.html">User Sign in / Sign up</a>
         </div>
       </div>
     </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>What you can do</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Guild Registration</h3>
-            <p>Create an official page for your guild with leader verification.</p>
-          </article>
-          <article class="card">
-            <h3>Member Accounts</h3>
-            <p>Players can sign in to join, see events, and contribute to guild goals.</p>
-          </article>
-          <article class="card">
-            <h3>Events & Updates (coming)</h3>
-            <p>Post schedules, donation targets, and announcements.</p>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
-
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> GuildHub101 • A community site. Not affiliated with any game. </small>
+      <small>© <span id="year"></span> GuildHub101 • A community site. Not affiliated with any game.</small>
     </div>
   </footer>
 </body>
